@@ -12,7 +12,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-9">
-					barre de recherche (include)
+				<?php include"recherche.php"?>
+					
 			</div>
 			<div class="col-sm-3">
 					<img src="chateau.jpg"  >					
@@ -20,10 +21,13 @@
 		</div>
 		<div class="row">
 		   <div class="col-sm-9">
-					carroussel / résultat de la recherche / pages d'admin (ajout d'un livre)
+				<?php include"carroussel.php"?>
+
+					
 			</div>
 			<div class="col-sm-3">
-					formulaire de connexion / profil connecté (include)
+					<?php include"authentification.php"?>
+					
 			</div>
 		</div>
 	</div>
