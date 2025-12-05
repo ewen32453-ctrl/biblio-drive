@@ -24,15 +24,13 @@
         </nav>
         <?php
           if (isset($_REQUEST["rechercher"])){
-            require_once('connexion.php');
-            $nom = $_GET['nom'];
-            $select = $connexion->prepare("SELECT titre,nolivre FROM auteur, livre WHERE auteur.noauteur = livre.noauteur and auteur.nom=:nom");//on selection le titre et le nolivre dans auteurs .noauteur 
-            $select->bindValue(":nom",$nom);// pour eviter la conncatenation 
-            $select->setFetchMode(PDO::FETCH_OBJ);
-            $select->execute();// on execute la requete 
-            while($enregistrement = $select->fetch())
-              {
-              }
+          require_once('connexion.php');
+          $nom = $_GET['nom'];
+          $select = $connexion->prepare("SELECT titre,nolivre,anneeparution FROM auteur, livre WHERE auteur.noauteur = livre.noauteur and auteur.nom=:nom");//on selection le titre et le nolivre dans auteurs .noauteur 
+          $select->bindValue(":nom",$nom);// pour eviter la conncatenation 
+          $select->setFetchMode(PDO::FETCH_OBJ);
+          $select->execute();
+          
             }
         ?>
 </booy>
