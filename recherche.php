@@ -13,24 +13,8 @@
 <body class="container">
 
         <nav class="navbar navbar-expand-sm"> <!-- la navbar -->
-            <form action = "listerlivre.php" method = "get" >
-            <input type="texte" placeholder="Rechercher dans le catalogue (saisir le nom de l'auteur )"name="nom"size="68"><!-- texte dans la navbar -->
-           <input type="submit" name="rechercher" value="rechercher">
-           
-
-          
-       
+            <form action = "listerlivre.php" method = "post" >
+              <input type="texte" placeholder="Rechercher dans le catalogue (saisir le nom de l'auteur )" name="nom" size="68"><!-- texte dans la navbar -->
+              <input type="submit" name="rechercher" value="rechercher">
             </form>
         </nav>
-        <?php
-          if (isset($_REQUEST["rechercher"])){
-          require_once('connexion.php');
-          $nom = $_GET['nom'];
-          $select = $connexion->prepare("SELECT titre,nolivre,anneeparution FROM auteur, livre WHERE auteur.noauteur = livre.noauteur and auteur.nom=:nom");//on selection le titre et le nolivre dans auteurs .noauteur 
-          $select->bindValue(":nom",$nom);// pour eviter la conncatenation 
-          $select->setFetchMode(PDO::FETCH_OBJ);
-          $select->execute();
-          
-            }
-        ?>
-</booy>

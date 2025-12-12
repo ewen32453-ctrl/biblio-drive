@@ -18,7 +18,7 @@
 
  
             <div class="col-sm-3">
-                <img src="chateau.jpg" class="img-fluid" alt="Château">
+                <img src="chateau.jpg"  >					
             </div>
         </div>
 
@@ -29,14 +29,14 @@
 
                 if (isset($_POST["nom"])) {
                     $nom = $_POST["nom"];              
-                    $stmt = $connexion->prepare(" SELECT nolivre, titre, anneeparution, noauteur  FROM livre  INNER JOIN auteur ON livre.noauteur = auteur.noauteur  WHERE auteur.nom = :nom  ORDER BY anneeparution");
+                    $stmt = $connexion->prepare(" SELECT nolivre, titre, anneeparution, livre.noauteur  FROM livre  INNER JOIN auteur ON livre.noauteur = auteur.noauteur  WHERE auteur.nom = :nom  ORDER BY anneeparution");
                     $stmt->bindValue(":nom", $nom, PDO::PARAM_STR);
                     $stmt->setFetchMode(PDO::FETCH_OBJ);
                     $stmt->execute(); 
                     while ($enregistrement = $stmt->fetch()) {
                         echo "
-                                <a class='couleur1' href='page_detail.php?nolivre=" . $enregistrement->nolivre . "'>
-                                    " . htmlspecialchars($enregistrement->titre) . " (" . $enregistrement->anneeparution . ")
+                                <a class='couleur1' href='detail_livre.php?nolivre=" . $enregistrement->nolivre . "'>
+                                    " . $enregistrement->titre . " (" . $enregistrement->anneeparution . ")
                                 </a>";
                     }
                 }
