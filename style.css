@@ -1,0 +1,13 @@
+.btn-multicolor {
+    background: linear-gradient(45deg, #ff0000, #ff9800, #ffeb3b, #4caf50, #2196f3, #9c27b0);
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-multicolor:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    color: white;
+}

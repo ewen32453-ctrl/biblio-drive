@@ -39,7 +39,7 @@
       ?>
     </div>
 
-    <!-- Left and right controls -->
+    <!-- Left and right controls 
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Précédent</span>
@@ -47,7 +47,7 @@
     <a class="right carousel-control" href="#myCarousel" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
       <span class="sr-only">Suivant</span>
-    </a>
+    </a>-->
   </div>
 </div>
 

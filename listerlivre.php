@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
+<?php
+session_start();
+ob_start(); // Cette fonction active la mise en mémoire tampon de la sortie jusqu'a la deconnexion
+?>
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -37,11 +31,21 @@
                         echo "
                                 <a class='couleur1' href='detail_livre.php?nolivre=" . $enregistrement->nolivre . "'>
                                     " . $enregistrement->titre . " (" . $enregistrement->anneeparution . ")
+                                    
+                                    <br><br>
                                 </a>";
                     }
                 }
                 ?>
+                <br><br>
+                <p>
+                    <a href="acceuil.php" class="btn btn-primary mt-3">
+                        ← Retour à l'accueil
+                    </a>
+                </p>
             </div>
+            
+            
             <div class="col-sm-3">
                 <?php include "authentification.php"; ?>
             </div>
