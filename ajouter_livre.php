@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="container">
-    <h1 class="couleur1">ajouter un livre : <img src=".\image_site\pioche_minecraft_or.jpg" width="55" height="55"></h1>  
+        <h1 class="couleur1">ajouter un livre :</h1>  
        <?php
         require_once 'connexion.php';
 
-        if (isset($_POST['bouton'])) { {//vérifie la variable 
+        if (isset($_POST['bouton'])) { // vérifie la variable 
             $noauteur = $_POST['noauteur'];
             $titre = $_POST['titre'];
             $isbn13 = $_POST['isbn13'];
@@ -25,7 +25,6 @@
             $stmt = $connexion->prepare("INSERT INTO livre (noauteur, titre, isbn13, anneeparution, detail, photo, dateajout) 
             VALUES (:noauteur, :titre, :isbn13, :anneeparution, :detail, :photo, :dateajout)");
             
-            //lie un paramètre à un nom de variable
             $stmt->bindParam(':noauteur', $noauteur);
             $stmt->bindParam(':titre', $titre);
             $stmt->bindParam(':isbn13', $isbn13);
@@ -41,26 +40,23 @@
                 echo "<div class='alert alert-danger'>Erreur lors de l'ajout du livre.</div>";
             }
         }
-    }
+
         $stmt_auteurs = $connexion->prepare("SELECT noauteur, nom FROM auteur");
         $stmt_auteurs->execute(); 
-        $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC); // 
+        $auteurs = $stmt_auteurs->fetchAll(PDO::FETCH_ASSOC);
         ?>
-            <form action="" method="post">
+        <form action="" method="post">
             <div class="mb-3">
-            <!-- liste deroulante-->  
-            <a class="btn btn-success" href="page_ajouter_auteur.php">ajouter un auteur <img src=".\image_site\pioche_en_fer.jpg" width="35" height="35"></a>           
-           
-            <select class="form-control" id="noauteur" name="noauteur" required>
-                    
-            <?php foreach ($auteurs as $auteur): ?> 
-                        
-                <option value="<?= $auteur['noauteur']; ?>"><?= $auteur['nom']; ?></option> 
+                <!-- liste déroulante -->  
+                <a class="btn btn-success" href="ajoute_auteur.php">ajouter un auteur</a>           
+
+                <select class="form-control" id="noauteur" name="noauteur" required>
+                    <?php foreach ($auteurs as $auteur): ?> 
+                        <option value="<?= $auteur['noauteur']; ?>"><?= $auteur['nom']; ?></option> 
                     <?php endforeach; ?>
-               
                 </select>
-            
-            </div> <!-- affiche le formulaire-->
+            </div> <!-- affiche le formulaire -->
+
             <div class="mb-3">
                 <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" required> 
             </div>
@@ -76,8 +72,9 @@
             <div class="mb-3">
                 <input type="text" class="form-control" id="photo" name="photo" placeholder="Nom de Fichier Photo" required>
             </div>
-            <button type="submit" name="bouton" class="btn btn-warning">Ajouter le livre</button>
+            <button class="btn bouton-anim">Valider</button>
             
+
         </form>
     </div>
 </body>

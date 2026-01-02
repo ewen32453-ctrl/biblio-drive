@@ -11,3 +11,32 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     color: white;
 }
+
+.btn-simple {
+    background: rgb(196, 195, 195);
+    border: black;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+}
+.btn-simpler:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    color: white;
+}
+
+/* Animation du bouton */
+@keyframes changeCouleur {
+    0%   { background-color: #ffc107; } /* jaune */
+    25%  { background-color: #198754; } /* vert */
+    50%  { background-color: #0d6efd; } /* bleu */
+    75%  { background-color: #dc3545; } /* rouge */
+    100% { background-color: #ffc107; } /* revient au jaune */
+}
+
+
+.bouton-anim {
+    animation: changeCouleur 4s infinite; /* 4 secondes en boucle infinie */
+    color: white; /* texte blanc */
+    border: none; /* pas de bordure */
+}
