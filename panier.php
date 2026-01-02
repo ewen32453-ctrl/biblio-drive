@@ -4,7 +4,7 @@
        $_SESSION['panier'] = array(); // regroupe les informations
     }
    ?>
-   <h1 id='panier'class="couleur3">Votre panier <img src="./image_site/Livre_minecraft.jpg" width="50" height="50"></h1>  
+   <h1 id='panier'class="couleur3">Votre panier </h1>  
    <?php 
         
         // Affichage du panier 
@@ -21,10 +21,10 @@
           
           if (empty($_SESSION['panier'])){ //verifie si la session est considérée comme vide
            
-            echo '<h5 class="couleur2" id="vide"><img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150">Votre panier est triste sans lumière <img src="./image_site/Emoji_triste.gif" width="40" height="40"> ajouter un livre !<img src="./image_site/torche_éteint_minecraft.jpg" width="150" height="150"></h5>';
+            echo '<h5> Votre panier est vide</h5>';
         } else { //messsage quand le panier est remplie
             
-          echo '<h5  class="couleur2" id="rempli"><img src="./image_site/Torche allumé.gif" width="100" height="110">Votre panier vous remercie <img src="./image_site/emoji_contant.gif" width="40" height="40"> <img src="./image_site/Torche allumé.gif" width="100" height="110"></h5>';
+          echo '<h5>Votre panier n est plus vide  </h5>';
             echo '<form method="POST">';
             
             foreach($_SESSION['panier'] as $nolivre) { // parcour tous les livres dans le tableau le panier
