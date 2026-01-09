@@ -40,7 +40,7 @@
 
         <!-- Lien panier -->
        <a href="page_panier.php" class="btn btn-primary mt-3">
-         ←Panier
+         Panier
         </a>
 
     </nav>

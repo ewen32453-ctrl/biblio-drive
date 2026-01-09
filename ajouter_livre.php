@@ -1,3 +1,6 @@
+<?php
+require_once('securiter_page.php');?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -72,7 +75,7 @@
             <div class="mb-3">
                 <input type="text" class="form-control" id="photo" name="photo" placeholder="Nom de Fichier Photo" required>
             </div>
-            <button class="btn bouton-anim">Valider</button>
+            <button class="btn-multicolor">Valider</button>
             
 
         </form>

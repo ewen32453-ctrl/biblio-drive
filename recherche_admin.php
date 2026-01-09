@@ -1,3 +1,6 @@
+<?php
+require_once('securiter_page.php');?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

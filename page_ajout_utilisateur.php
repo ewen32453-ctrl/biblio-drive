@@ -1,8 +1,8 @@
 <?php
 session_start();
 ob_start(); // Cette fonction active la mise en mémoire tampon de la sortie jusqu'a la deconnexion du client
+require_once('securiter_page.php');?>
 
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
