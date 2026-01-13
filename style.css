@@ -1,3 +1,30 @@
+.bouton-clignotant {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    animation: couleurs 2s linear infinite;
+}
+
+/* Animation de changement de couleur */
+@keyframes couleurs {
+    0%   { background-color: red; }
+    20%  { background-color: orange; }
+    40%  { background-color: yellow; color: black; }
+    60%  { background-color: green; color: white; }
+    80%  { background-color: blue; }
+    100% { background-color: purple; }
+}
+
+
+
+
+
+
+/* Bouton multicolore (non animé) */
 .btn-multicolor {
     background: linear-gradient(45deg, #ff0000, #ff9800, #ffeb3b, #4caf50, #2196f3, #9c27b0);
     color: white;
@@ -12,31 +39,10 @@
     color: white;
 }
 
+/* Bouton simple */
 .btn-simple {
     background: rgb(196, 195, 195);
-    border: black;
+    border: 1px solid black;
     font-weight: bold;
     transition: transform 0.2s, box-shadow 0.2s;
-
-}
-.btn-simpler:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    color: white;
-}
-
-/* Animation du bouton */
-@keyframes changeCouleur {
-    0%   { background-color: #ffc107; } /* jaune */
-    25%  { background-color: #198754; } /* vert */
-    50%  { background-color: #0d6efd; } /* bleu */
-    75%  { background-color: #dc3545; } /* rouge */
-    100% { background-color: #ffc107; } /* revient au jaune */
-}
-
-
-.bouton-anim {
-    animation: changeCouleur 4s infinite; /* 4 secondes en boucle infinie */
-    color: white; /* texte blanc */
-    border: none; /* pas de bordure */
 }
