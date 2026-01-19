@@ -6,7 +6,7 @@
     border-radius: 10px;
     cursor: pointer;
     color: white;
-    animation: couleurs 2s linear infinite;
+    animation: couleurs 10s linear infinite;
 }
 
 /* Animation de changement de couleur */
